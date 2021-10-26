@@ -1,0 +1,863 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CASE 2</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/nprogress.css" rel="stylesheet">
+    <link href="../css/custom.min.css" rel="stylesheet">
+    <link href="case2.css" rel="stylesheet">
+	<script type="text/javascript" src="case2.js"></script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	$(window).on("load",function() {
+	  $(window).scroll(function() {
+		var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+		$(".fade").each(function() {
+		  /* Check the location of each desired element */
+		  var objectBottom = $(this).offset().top + $(this).outerHeight();
+		  
+		  /* If the element is completely within bounds of the window, fade it in */
+		  if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+			if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+		  } else { //object goes out of view (scrolling up)
+			if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+		  }
+		});
+	  }).scroll(); //invoke scroll-handler on page-load
+	});
+	
+	
+	
+	</script>
+	
+	<script>
+	$(document).ready(function(){
+	  // Add smooth scrolling to all links
+	  $("a").on('click', function(event) {
+
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+		  // Prevent default anchor click behavior
+			event.preventDefault();
+
+		  // Store hash
+			var hash = this.hash;
+			var elementClass = event.target.className;
+			document.getElementsByClassName(''+elementClass+'')[0].style.display='none';
+			var parentElement = document.getElementsByClassName(''+elementClass+'')[0].parentNode;
+			parentElement.style.paddingBottom ='1em'; 
+			parentElement.style.marginTop='1em'; 
+			var targetElementID = hash.substring(1, hash.length);
+			document.getElementById(''+targetElementID+'').style.display='block';
+		  
+		  // Using jQuery's animate() method to add smooth page scroll
+		  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function(){
+	   
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			window.location.hash = hash;
+		  });
+		} // End if
+	  });
+	});
+	
+	
+	</script>
+	
+	<script>
+	
+	$(function() {
+	  $("body").click(function(e) {
+		if (e.target.className == "option" || $(e.target).parents(".option").length) {
+			e.target.getElementsByClassName("radioBtn")[0].checked=true; 
+		} 
+	  });
+	})
+	</script>
+	
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col" id="side_bar">
+				<script>loadSideBar();</script>
+			</div>
+		
+		
+			<div class="right_col" role="main">
+				<div id="page_title">
+					<script>loadTitle();</script>
+				</div>
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<div class="case2">
+									<div style="display: inline-block; text-align: left; margin-top: 1em;" id="table_of_contents">
+										<h1>Table of Contents</h1>
+										<p> 
+											1.	Objectives <br>
+											2.	Case Overview <br>
+											3.	Etiology<br>
+											4.	History <br>
+											5.	Physical Examination<br>
+											6.	Management and Prevention: Hands Off <br>
+											7.	Management and Prevention: Hands On <br>
+											8.	Future of Wound Healing <br>
+											9.	Summary: ALERT   <br>
+											10.	Post-Quiz <br>
+										</p>
+									</div>
+									<a class="continue btnLink" href="#objectives">Start Module</a>
+								</div>
+								
+								<div class="case2" id="objectives" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Objectives</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										•	Understand the risk factors that may predispose a patient to diabetic foot ulcers   <br>
+										•	Identify other healthcare providers that may be involved in diabetic foot ulcer care<br>
+										•	Suggest and outline wound assessment and wound management models for diabetic foot ulcer management<br>  
+										•	Explore the use of clinical guidelines and the best available evidence to generate a thorough systematic protocol-based approach to the management of diabetic foot ulcers<br>  
+									</div>
+									<a class="objectives btnLink" href="#overview">Continue</a>
+								</div>
+								
+								<div class="case2" id="overview">
+									<h1 style="padding-top: 0.5em;">Case Overview</h1>
+									<div style="display: inline-block; text-align: left; margin-top:1.5em; width:75%;">
+										Rafael Cordero is an 82-year-old man who is presenting with new-onset foot ulcers (see <b>Figure 1</b>). He is accompanied by his wife who is concerned about his overall health. 									
+									</div>
+									<br><br>
+									<img src="Figure1-case2.jpg" width="75%" height="90%" class="center">	
+									<br><br>
+									<button type="button" class="collapsible">Past Medical History</button>
+									<div class="content">
+										• Type 2 Diabetes x 15 years <br>
+										• (ischemic) heart disease <br>
+										• Hypertension
+									</div>
+									
+									<button type="button" class="collapsible">Medications</button>
+									<div class="content">
+										• Metformin 500 mg BID <br>
+										• Ramipril 10 mg/day
+									</div>
+									
+									<a class="overview btnLink" href="#etiology">Continue</a>
+									<script>
+										collapseTabs("collapsible", "overview"); 
+									</script>								
+								</div>
+								
+								<div class="case2" id="etiology" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Etiology</h1>
+									<div style="display: inline-block; text-align: left; margin-top:1.5em; width:75%;">
+										<p><b>Question 1: What is a wound infection? Type your answer in the text box.</b></p>
+										<textarea id="Q1" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q1Explanation')">Submit</button>
+										
+										<div id="Q1Explanation" class="explanation" style="display:none;">
+											<br>
+											<div style="overflow-x:auto;">
+												<table style="border: 2px solid black; border-collapse: collapse;margin-left: auto; margin-right: auto;background-color: white; color:black;">
+													<tr>
+														<th>Factors</th>
+														<th>Examples</th>
+														
+													</tr>
+													<tr>
+														<td rowspan="3">Intrinsic</td>
+														<td>Peripheral neuropathy (dysfunction of the nerves in the lower limbs)</td>
+															
+													</tr>
+													<tr>
+														<td>Ischemia (a reduced blood supply)</td>														
+													</tr>
+													<tr>
+														<td>Hyperglycemia</td>														
+													</tr>
+													<tr>
+														<td rowspan="2">Extrinsic</td>
+														<td>Wound infection</td>
+															
+													</tr>
+													<tr>
+														<td>Abnormal foot pressures and callus formation</td>														
+													</tr>												
+												</table>
+											</div><br>
+											<b>Table 1:</b> Instrinsic and Extrinsic Causes of Foot Ulcers in Patients with Diabetes									
+										</div>
+										
+										<br><hr class="blueBackground-border">
+										<p><b>Question 2: What are the two common foot types in patients with diabetes? Type your answer in the text box.</b></p>
+										<textarea id="Q2" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q2Explanation')">Submit</button>
+										<div id="Q2Explanation" class="explanation" style="display:none;">
+											<br>
+											<div style="overflow-x:auto;">
+												<br>
+												<table style="border: 2px solid black; border-collapse: collapse;margin-left: auto; margin-right: auto;background-color: white; color:black;">
+													<tr>
+														<th>Type of Diabetic Foot</th>
+														<th>Characteristic</th>
+														<th>Clinical Features</th>														
+													</tr>
+													<tr>
+														<td>Neuropathic foot</td>
+														<td>Peripheral neuropathy predominates but the arterial supply to the foot is not affected</td>
+														<td>Deficit in touch, vibration, temperature, and pain sensation within the foot and lower limb</td>
+															
+													</tr>
+													<tr>
+														<td>Neuroischaemic foot</td>
+														<td>Peripheral neuropathy is coupled with a reduced ateria supply, often due to peripheral arterial disease</td>
+														<td>A cold foot on palpation which may be pale or cyanosed in colour and pulses may weak or absent</td>														
+													</tr>
+																							
+												</table>
+											</div><br>
+											<b>Table 2:</b> Characteristics and Clinical Features of Different Types of Diabetic Foot
+										
+										</div>
+										<br><hr class="blueBackground-border">
+										<u>Note: Shortest healing times for neuropathic ulcers have shorter healing times compared to ischemic or neuro-ischemic ulcers.</u>
+									</div>
+									<a class="etiology btnLink" href="#history">Continue</a>
+								</div>
+								
+								<div class="case2" id="history">
+									<h1 style="padding-top: 0.5em;">History</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										<div class="tab">
+										  <button class="tablinks" onclick="openCity(event, 'Medical History')">Medical History</button>
+										  <button class="tablinks" onclick="openCity(event, 'Medications')">Medications </button>
+										  <button class="tablinks" onclick="openCity(event, 'Nutritional factors')">Nutritional factors</button>
+										  <button class="tablinks" onclick="openCity(event, 'Social factors')">Social factors</button>
+										</div>
+
+										<div id="Medical History" class="tabcontent">
+											<h3 style="text-align:center">Medical History</h3>
+											<ol>
+												<li>Make a list of pre-existing medical conditions that may be unrelated to diabetes</li>
+												<li>Identify complications associated with diabetes, commonly hypertension and dyslipidemia.</li>
+											</ol>
+											<br>
+											<div style="text-align:center">
+												Click on each condition to learn more about their impact on wounds
+											</div>
+											
+											<button type="button" class="collapsible" style="width:100% !important;">Diabetes</button>
+											<div class="content" style="width:100% !important;">
+												<p><b>Question 3: List three reasons why individuals with diabetes mellitus are more prone to infection. Type your answer in the text box. </b></p>
+												<textarea id="Q3" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+												</textarea>
+												<button class="submitBtn" onclick="showExplanation('Q3Explanation')">Submit</button>
+												<div id="Q3Explanation" class="explanation" style="display:none;">
+													<u>Explanation</u><br>
+													<ol>
+													<li>Hyperglycaemia has a detrimental effect on the immune system, increasing risk of infection</li>
+													<li>Tissue hypoxia due to underlying damage to the vascular and neurological systems</li>
+													<li>WBC Function: compressive forces from daily activities such as walking can affect the function of white blood cells involved in the normal immune response.</li>
+													</ol>
+												</div>
+											</div>
+											
+											<button type="button" class="collapsible" style="width:100% !important;">Hypertension</button>
+											<div class="content" style="width:100% !important;">
+												Can lead to peripheral vascular disease, coronary heart disease, stroke and diabetes-related deaths 
+											</div>
+											
+											<button type="button" class="collapsible" style="width:100% !important;">Dyslipidemia</button>
+											<div class="content" style="width:100% !important;">
+												Stabilization of lipids may be a significant factor in diabetic foot ulcer management
+											</div>
+											
+											<script>
+												collapseTabs("collapsible", "history"); 
+											</script>								
+										</div>
+
+										<div id="Medications" class="tabcontent">
+											<h3 style="text-align:center">Medications</h3>
+											<ol>
+												<li>Inquire about mediations used to reduce the risk of developing associated complications of diabetes, hypertension and dyslipidemia </li>
+												<li>Take a note of medications that can significantly increase the risk of ulceration due to their impact on wound healing. These include steroid therapy, anticoagulant therapy, nonsteroidal anti-inflammatory drugs (NSAIDs) and immunosuppressant drugs.</li>
+											</ol>  
+										</div>
+
+										<div id="Nutritional factors" class="tabcontent">
+											<h3 style="text-align:center">Nutritional factors</h3>
+											Poor nutrition can negatively impact effective wound healing. Typically, patients with diabetes are advised to follow a diet low in fat, sugar and salt, high in fruit and vegetables and moderate in bread, potatoes, cereals, pasta and rice. 
+										</div>
+										
+										<div id="Social factors" class="tabcontent">
+											<h3 style="text-align:center">Social factors</h3>
+											Obesity, smoking and physical inactivity are associated with poor wound healing. Additionally, low socioeconomic status can indirectly lead to poor outcomes in wound healing due to poor access to health care and low health literacy. 
+										</div>
+										
+										<br><hr class="whiteBackgroundBorder"><br>
+										<p><b>Question 4: You already know about Mr. Cordero’s past medical history and medications. What further questions about the wound do you wish to ask the patient? Type your answer in the text box.</b></p>
+										<br>
+										<textarea id="Q4" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										
+										<br><hr class="whiteBackgroundBorder">
+										You begin to ask the following questions. Click on each question to find out Mr. Cordero’s replies
+										<br><br>
+										<button type="button" class="collapsible indented" style="width:100% !important;">How are your blood glucose levels?</button>
+										<div class="content" style="width:100% !important;">
+											My blood glucose levels have been up and down. They are typically 5 before lunch but anything up to 20 by the evening.  
+										</div>
+										
+										<button type="button" class="collapsible indented" style="width:100% !important;">How is your diet? </button>
+										<div class="content" style="width:100% !important;">
+											I try my best to stay away from carbs. The wife interrupts and tells you that his diet is very poor, consisting of foods with high glycemic index. 
+										</div>
+										
+										<button type="button" class="collapsible indented" style="width:100% !important;">When did you first notice the foot ulcer?  </button>
+										<div class="content" style="width:100% !important;">
+											My wife noted some ulcers on my foot a week ago (see <b>Figure 2</b>). We thought these would heal, but they are not healing. 
+											<img src="Figure2-case2.jpg" width="100%" height="90%" class="center">	
+
+										</div>
+										
+										<button type="button" class="collapsible indented" style="width:100% !important;">Is there any pain?</button>
+										<div class="content" style="width:100% !important;">
+											No pain at all. 
+										</div>
+										
+										<button type="button" class="collapsible indented" style="width:100% !important;">Have there been any changes in your footwear? </button>
+										<div class="content" style="width:100% !important;">
+											Yes, my wife gifted me a new pair of shoes on our anniversary two weeks ago. 
+										</div>
+										
+										<script>
+											collapseTabs("collapsible indented", "history"); 
+										</script>
+									</div>
+									<a class="history btnLink" href="#examination">Continue</a>
+								</div>
+								
+								<div class="case2" id="examination" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Physical Examination</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										The Hands-Off stage consists of physical examination, specifically examining presence of any foot deformity, wound characteristics, vascular status and neurological status. 
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Foot deformity</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Limited joint mobility</li>
+												<li>Glycosylation of collagen</li>
+												<li>Altered foot pressures</li>
+												<li>Ethnic background</li>
+												<li>Autonomic neuropathy</li>
+												<li>Motor neuropathy</li>
+												<li>Loss of sensation</li>
+											</ul>
+										</div>
+										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Wound characteristics</button>
+										<div class="content" style="width:100% !important;">
+											<img src="Figure2-case2.jpg" width="100%" height="90%" class="center">	
+										</div>	
+										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Vascular status</button>
+										<div class="content" style="width:100% !important;">
+											<img src="Figure3-case2.jpg" width="100%" height="90%" class="center">	
+										</div>	
+										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Neurological status</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Visual changes related to sensory, autonomic and/or motor neuropathy may be observed in the lower limbs and feet.</li>
+											</ul>
+											<img src="Figure4-case2.jpg" width="100%" height="90%" class="center">
+											<br>
+											<ul>
+												<li>Note that neuropathic foot ulcers typically occur on the plantar aspect of the foot under the metatarsal heads as a result of repetitive mechanical forces. </li>
+												<li>Skin lesions, such as a callus or corns, can also cause high plantar pressures. </li>
+												<li>A callus is described as a pre-ulcerative lesion, which when neglected, haematomas can form underneath the hardened skin leading to tissue necrosis and ulceration. </li>
+											</ul>
+										</div>	
+										
+										<script>
+											collapseTabs("collapsible", "examination"); 
+										</script>
+										
+										<br><hr class="blueBackground-border">
+										<p><b>Question 5: What are the signs of infection in diabetic foot ulcers? Type your answer in the text box.</b></p>
+										<textarea id="Q5" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q5Explanation')">Submit</button>
+										<div id="Q5Explanation" class="explanation" style="display:none;">
+											<img src="Figure5-case2.jpg" width="100%" height="90%" class="center">
+										</div>
+										
+										<br><hr class="blueBackground-border">
+										<p><b>Question 6: What assessments should be undertaken before implementing a management plan for Mr. Cordero? Type your answer in the text box. </b></p>
+										<textarea id="Q6" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q6Explanation')">Submit</button>
+										<div id="Q6Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											<ul>
+												<li>Using the “hands off” and “hands on” stages of the assessment model for diabetic foot ulcers</li>
+												<li>Medical history, medication, social factors, and nutritional factors should be used to help identify wound aetiology</li>
+												<li>The patient was unable to feel pain, indicating sensory neuropathy</li>
+												<li>His history of ischemic heart disease suggests possible peripheral arterial disease</li>
+												<li>The “hands on” stage involves assessing wound characteristics, the condition of the skin, the presence of deformity, and vascular and neurological assessments</li>
+												<li>Assessment findings confirm sensory deficit and a reduced arterial supply to the lower limbs and feet</li> 
+											</ul>
+										</div>
+									</div>
+									<a class="examination btnLink" href="#handsoff">Continue</a>
+								</div>
+								
+								<div class="case2" id="handsoff">
+									<h1 style="padding-top: 0.5em;">Management and Prevention: Hands Off</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										Similar to history taking and physical examination, wound management model has two recommended stages for wound management: Hands-Off and Hands-On. The “hands off” stage consists of patient-centered approach, education/prevention, interprofessional team, nutritional factors and social factors. 										
+										<br><br>
+										<button type="button" class="collapsible" style="width:100% !important;">Patient-centred approach</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Manage the patient holistically </li>
+												<li>Understand the patient’s expectations </li>
+												<li>Take into account the patient’s feelings associated with living with a chronic disease and foot ulceration</li>
+												<li>Work with the patient to establish a wound care plan </li>
+												<li>Inquire about any perceived barriers to the proposed management plan </li>
+												
+											</ul>
+										</div>
+										
+										<button type="button" class="collapsible" style="width:100% !important;">Education/prevention</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Educate and encourage patients with diabetes to indulge in foot care independently</li>
+												<li>Provide resources on local and virtual diabetes education programs, especially those that include information on foot care and diabetic foot ulcer prevention strategies  </li>												
+											</ul>
+										</div>	
+										
+										<button type="button" class="collapsible" style="width:100% !important;">Interprofessional team</button>
+										<div class="content" style="width:100% !important;">
+											<p><b>Question 7: Who should be involved in the care of a patient with diabetic foot ulcer? Type your answer in the text box. </b></p>
+											<textarea id="Q7" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+											</textarea>
+											<button class="submitBtn" onclick="showExplanation('Q7Explanation')">Submit</button>
+											<div id="Q7Explanation" class="explanation" style="display:none;">
+												<img src="Figure6-case2.jpg" width="100%" height="90%" class="center">
+											</div>
+											<b>Note</b>: This is not a complete list of interprofessional involved in diabetic foot ulcer care. 
+
+										</div>	
+										
+										<button type="button" class="collapsible" style="width:100% !important;">Nutritional factors</button>
+										<div class="content" style="width:100% !important;">
+											Key nutritional elements to diabetic wound care:
+											<ul>
+												<li>Glucose for generating deposition of new tissue</li>
+												<li>Fatty acids for generation of new cell structure</li>
+												<li>Protein for collagen formation</li>
+												<li>Vitamin C for development of healthy granulation tissue</li>
+											</ul>
+											<br>
+											Exercise training, nutrition and stress management can significantly reduce glycaemic and blood pressure levels.
+										</div>
+
+										<button type="button" class="collapsible" style="width:100% !important;">Social factors</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Improve psychosocial therapies, such as encouraging self-management skills and patient empowerment</li>	
+											</ul>
+										</div>
+										
+										<script>
+											collapseTabs("collapsible", "handsoff"); 
+										</script>
+										
+										<br><hr class="whiteBackgroundBorder">
+										<p><b>Question 8: What are different types of risk ? Type your answer in the text box.</b></p>
+										<textarea id="Q8" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+									</div>
+									<a class="handsoff btnLink" href="#handson">Continue</a>
+								</div>
+								
+								<div class="case2" id="handson" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Management and Prevention: Hands On</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										The “hands on” stage involves physical intervention for wound bed preparation, infection management, antimicrobials, offloading diabetic foot ulcers and Charcot’s osteopathy.										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Wound bed preparation</button>
+										<div class="content" style="width:100% !important;">
+											The TIME framework aims to optimize the local wound environment for healing. 
+											<img src="Figure7-case2.jpg" width="100%" height="90%" class="center">
+											<br><br>
+											Sharp debridement is generally considered to be the gold standard treatment for diabetic foot ulcers. 
+											
+											<br><br>
+											<p><b>Question 9: What are the benefits and contraindications of wound debridement? Type your answer in the text box. </b></p>
+											<textarea id="Q9" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+											</textarea>
+											<button class="submitBtn" onclick="showExplanation('Q9Explanation')">Submit</button>
+											<div id="Q9Explanation" class="explanation" style="display:none;">
+												<u>Explanation:</u><br>
+												Benefits of wound debridement: 
+												<ul>
+													<li>Removes callus from the wound periphery to reveal the true extent of the wound margins</li>
+													<li>Removes dead or devitalized tissue from the wound bed</li>
+													<li>Reduces pressure on the wound bed</li>
+													<li>Facilitates drainage</li>
+													<li>Stimulates healing</li>
+												</ul>
+												Contraindications to sharp debridement: 
+												<ul>
+													<li>If the foot is painful, particularly when wounds are primarily due to ischemia, the patient may not tolerate sharp debridement and alternative methods should be considered.</li>
+												</ul>
+											</div>
+											
+											<br><br>
+											<p><b>Question 10: What are the different stages of foot ulcer and how do the stages play a role in the management of diabetic foot ulcer? Type your answer in the text box.</b></p>
+											<textarea id="Q10" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+											</textarea>
+											<button class="submitBtn" onclick="showExplanation('Q10Explanation')">Submit</button>
+											<div id="Q10Explanation" class="explanation" style="display:none;">
+												<u>Explanation:</u><br>
+												Usually there are six stages of diabetic foot. Management depends on the stage.  
+												<ul>
+													<li>Stage 1: normal foot</li>
+													<li>Stage 2: high-risk foot</li>
+													<li>Stage 3: ulcerated foot</li>
+													<li>Stage 4: infected foot</li>
+													<li>Stage 5: necrotic foot</li>
+													<li>Stage 6: unsalvageable foot</li>
+												</ul>
+												<img src="Figure8-case2.jpg" width="100%" height="90%" class="center">
+
+											</div>
+											
+											<br><br>
+											<p><b>Question 11: What factors impact the selection of dressing? Type your answer in the text box.</b></p>
+											<textarea id="Q11" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+											</textarea>
+											<button class="submitBtn" onclick="showExplanation('Q11Explanation')">Submit</button>
+											<div id="Q11Explanation" class="explanation" style="display:none;">
+												<u>Explanation:</u><br>
+												Dressing selection will depend on a number of factors:		
+												<ul>
+													<li>Volume of wound exudate and the ability of the dressing to absorb fluid</li>
+													<li>Condition of the surrounding skin</li>
+													<li>Nonadherent properties of the dressing</li>
+													<li>Patient-related factors such as mobility levels, footwear and desire to bathe should be considered</li>
+													<li>Bacterial burden</li>
+													<li>Local wound care formularies</li>
+												</ul>
+											</div>
+										</div>
+										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Management of infection</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Infection is a causative factor for major amputation</li>
+												<li>Infections must be quickly assessed and aggressively managed </li>
+												<li>Initial treatment should include wound cleansing, nonviable tissue debridement and probing, with a blunt instrument, to identify depth, foreign bodies, or exposed bone</li>
+												<li>Osteomyelitis/bone infection is indicated if a sterile probe inserted into the wound reaches bone</li>
+											</ul>
+										</div>	
+										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Antimicrobials</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>Commercially available antimicrobial dressings include silver, iodine, and honey impregnated dressings</li>
+												<li>If the patient shows signs of cellulitis, lymphangitis and osteomyelitis, systemic antibiotic therapy is always indicated </li>
+												<li>Topical antimicrobial therapy alone is not enough for the management of cellulitis, lymphangitis, and osteomyelitis; however, they may be used in combination with systemic therapy</li>
+												<li>Antibiotics are usually empirically selected at first and then altered depending on results of culture and sensitivity tests</li>
+												<li>During severe infection, the patient will need prompt hospital admission for intravenous (IV) antibiotics</li>
+												<li>On admission the foot should be promptly assessed to determine whether surgical drainage and debridement are needed</li>
+											</ul>
+										</div>	
+										
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Offloading diabetic foot ulcers</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>The diabetic foot is often subject to elevated plantar pressures due to the effects of sensory, motor and autonomic neuropathy</li>
+												<li>If left unaddressed, this can contribute to the development of diabetic foot ulceration and can delay wound healing </li>
+												<li>Standard wound management strategies for diabetic foot ulcer include aggressive pressure offloading procedures</li>
+												<li>Removable walkers, half shoes, simple insoles, total contact insoles, temporary footwear with forefoot or rearfoot adaptations such as Darco Heelwedge shoes, felt padding and the use of crutches or wheelchairs are all examples of removable devices</li>
+											</ul>
+										</div>
+
+										<button type="button" class="collapsible secondcollapse" style="width:100% !important;">Charcot’s osteopathy</button>
+										<div class="content" style="width:100% !important;">
+											<ul>
+												<li>The Charcot joint is reported as a gradual and destructive manifestation of neurosensory damage in diabetic patients</li>
+												<li>The development of the Charcot changes in the diabetic foot can lead to deformity, increased risk of skin breakdown and lower limb amputation </li>
+												<li>Thus, it is common for practitioners to have to manage a combination of pre-ulcerative changes, diabetic foot ulcer, and Charcot foot</li>
+												<li>Management of Charcot foot is focused on partial weight-bearing strategies, offloading high-pressure areas or complete immobilization techniques</li>
+												<li>Factors that affect intervention are stage of development, complications, and the absence of a foot ulcer (as offloading measures are used to prevent occurrence)</li>
+											</ul>
+										</div>
+										
+										<script>
+											collapseTabs("collapsible secondcollapse", "handson"); 
+										</script>
+										
+										<br><hr class="blueBackground-border">
+										<p><b>Question 12: What management strategies are the most appropriate for Mr. Cordero? Type your answer in the text box.</b></p>
+										<textarea id="Q12" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q12Explanation')">Submit</button>
+										<div id="Q12Explanation" class="explanation" style="display:none;">
+												<u>Explanation:</u><br>
+												<ul>
+													<li>The suggested protocol for diabetic foot ulcer management is used to ensure a systematic approach to wound assessment</li>
+													<li>Initially, sharp debridement of dead and devitalized tissue is performed by a podiatrist </li>
+													<li>Due to purulent, green/blue exudate on the soiled dressing and localized erythema around the wound margins, it is suspected to be Pseudomonas infection</li>
+													<li>Swabs are taken to identify the infectious organisms</li>
+													<li>Broad-spectrum antibiotics are initiated</li>
+													<li>To control moisture balance and prevent maceration of the surrounding tissues as well as offer an antimicrobial role, a silver-impregnated Hydrofiber dressing is applied</li>
+													<li>Due to infection and ischemia the total contact cast is contraindicated</li>
+													<li>Felt padding is applied and a Darco shoe is issued</li>
+													<li>Foot health education is provided, and a review appointment is made for two days later</li>
+												</ul>
+										</div>
+										
+										<br><hr class="blueBackground-border">
+										<p><b>Question 13: What are the recommended assessments based on risk status? Type your answer in the text box. </b></p>
+										<textarea id="Q13" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q13Explanation')">Submit</button>
+										<div id="Q13Explanation" class="explanation" style="display:none;">
+											<div style="overflow-x:auto;">
+												<table style="border: 2px solid black; border-collapse: collapse; margin-left: auto; margin-right: auto;background-color: white;">
+													<tr>
+														<th>Risk Status</th>
+														<th>Review</th>
+														<th>Recommended assessments/treatment</th>
+													</tr>
+													
+													<tr>
+														<td>Low risk (normal sensation, normal foot pulses)</td>
+														<td>Annual review</td>
+														<td>
+															<ul>
+																<li>Negotiate and agree on a foot management plan with the patient</li>
+																<li>Patient education</li>
+															</ul>
+														</td>
+													</tr>	
+													
+													<tr>
+														<td>Increased risk (loss of sensation or absent foot pulses or other risk factors)</td>
+														<td>Review every 3-6 months</td>
+														<td>
+															<ul>
+																<li>Assess patient's feet</li>
+																<li>Determine the need for vascular assessment</li>
+																<li>Assess footwear</li>
+																<li>Patient education</li>
+															</ul>
+														</td>
+													</tr>	
+													
+													<tr>
+														<td>High risk (loss of sensation or absent foot pulses plus other risk factors, e.g., skin changes or deformity)</td>
+														<td>Review every 1-3 months</td>
+														<td>
+															If required, ensure appropriate provision of:
+															<ul>
+																<li>Footwear and insoles</li>
+																<li>Skin and nail care</li>
+																<li>Patient education</li>
+															</ul>
+														</td>
+													</tr>
+
+													<tr>
+														<td>Current ulcer</td>
+														<td>Emergency situation: to be seen by the multi-professional foot care team within 24 hours</td>
+														<td>
+															<ul>
+																<li>Urgent assessment and management of the ulceration</li>
+															</ul>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<a class="handson btnLink" href="#future">Continue</a>
+								</div>
+								
+								<div class="case2" id="future">
+									<h1 style="padding-top: 0.5em;">Future of Wound Healing</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										Recently, negative pressure wound therapy has been used to treat complex wounds. It is believed that negative pressure influences healing by expediting wound debridement, removing excess fluid that can prevent wound healing, decreasing localized oedema and increasing blood flow.<br><br>
+										<ul>
+											<li>Modern initiatives for managing diabetic foot ulcers include topical growth factors and living human skin equivalent</li>
+											<li>A multicentre study studied the effect of platelet-derived growth factors (PDGF) on the healing of neuropathic diabetic foot ulcers.</li>
+										</ul>
+									</div>
+									<a class="future btnLink" href="#summary">Continue</a>
+								</div>
+								
+								<div class="case2" id="summary" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Summary: ALERT</h1>
+									<div style="display: inline-block; text-align: left; width: 75%;">
+										In conclusion, ALERT Assessment Framework helps provide the necessary steps involved before diabetic foot ulcers can be managed. 
+										<img src="Figure9-case2.jpg" width="100%" height="90%" class="center">
+
+									</div>
+									<a class="summary btnLink" href="#quiz">Continue</a>
+								</div>
+								
+								<div class="case2" id="quiz" >
+									<h1 style="padding-top: 0.5em;">Post-Quiz</h1>
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em;">
+											<div style = "text-align:left">
+												1. Which of the following can provide information on strength and rhythym of the pulse and the extent of arterial disease?
+											</div>
+											<div id="firstQnAns" class="options">
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="The Doppler assessment">The Doppler assessment<br>
+												</div>
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="The Ankle brachial pressure index">The Ankle brachial pressure index<br>
+												</div>
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="Palpation of foot pulses">Palpation of foot pulses<br>
+												</div>
+												
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="Clinical observation for signs of arterial insufficiency">Clinical observation for signs of arterial insufficiency <br>
+												</div>
+												
+											</div>
+											<div id="firstQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('firstQnAns', '1', 'firstQnFeedback')">Submit</button>
+										</div>
+										
+									</div>
+									<br><br>
+									
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em; ">
+												<div style = "text-align:left">
+													2.	Which of the following is part of the “hands-off” wound management stage?
+												</div>
+												<div id="secondQnAns" class="options">
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Antimicrobials">Antimicrobials<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Charcot’s osteopathy">Charcot’s osteopathy<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Education/prevention">Education/prevention<br>
+													</div>
+													
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Offloading diabetic foot ulcers">Offloading diabetic foot ulcers<br>
+													</div>
+												</div>
+											<div id="secondQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('secondQnAns', '2', 'secondQnFeedback')">Submit</button>
+										</div>
+									</div>
+									<br><br>
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em; ">
+												<div style = "text-align:left">
+													3.	Which of the following is a contraindication of would debridement?
+												</div>
+												<div id="thirdQnAns" class="options">
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Delayed healing">Delayed healing<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Decreased drainage">Decreased drainage<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Increased pain">Increased pain<br>
+													</div>
+													
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="All of the above">All of the above<br>
+													</div>
+												</div>
+											<div id="thirdQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('thirdQnAns', '3', 'thirdQnFeedback')">Submit</button>
+										</div>
+									</div>
+									<br><br>
+									
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em; ">
+												<div style = "text-align:left">
+													4.	What is implicated as the most important causative factor for major amputation, and thus is treated aggressively?
+												</div>
+												<div id="fourthQnAns" class="options">
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Infection">Infection<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Pain">Pain<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Malodour">Malodour<br>
+													</div>
+													
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Calluses ">Calluses<br>
+													</div>
+												</div>
+											<div id="fourthQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('fourthQnAns', '4', 'fourthQnFeedback')">Submit</button>
+										</div>
+									</div>
+								</div>
+							</div>
+													
+						</div>
+					</div>
+				
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- FastClick -->
+	<script src="../js/fastclick.js"></script>
+	<!-- NProgress -->
+	<script src="../js/nprogress.js"></script>
+
+	 
+
+	<!-- Custom Theme Scripts -->
+	<script src="../js/custom.min.js"></script>
+</body>
+</html>

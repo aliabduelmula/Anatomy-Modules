@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CASE 1</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/nprogress.css" rel="stylesheet">
+    <link href="../css/custom.min.css" rel="stylesheet">
+    <link href="case1.css" rel="stylesheet">
+	<script type="text/javascript" src="case1.js"></script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	$(window).on("load",function() {
+	  $(window).scroll(function() {
+		var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+		$(".fade").each(function() {
+		  /* Check the location of each desired element */
+		  var objectBottom = $(this).offset().top + $(this).outerHeight();
+		  
+		  /* If the element is completely within bounds of the window, fade it in */
+		  if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+			if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+		  } else { //object goes out of view (scrolling up)
+			if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+		  }
+		});
+	  }).scroll(); //invoke scroll-handler on page-load
+	});
+	
+	
+	
+	</script>
+	
+	<script>
+	$(document).ready(function(){
+	  // Add smooth scrolling to all links
+	  $("a").on('click', function(event) {
+
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+		  // Prevent default anchor click behavior
+			event.preventDefault();
+
+		  // Store hash
+			var hash = this.hash;
+			var elementClass = event.target.className;
+			document.getElementsByClassName(''+elementClass+'')[0].style.display='none';
+			var parentElement = document.getElementsByClassName(''+elementClass+'')[0].parentNode;
+			parentElement.style.paddingBottom='1em'; 
+			parentElement.style.marginTop='1em'; 
+			var targetElementID = hash.substring(1, hash.length);
+			document.getElementById(''+targetElementID+'').style.display='block';
+		  
+		  // Using jQuery's animate() method to add smooth page scroll
+		  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function(){
+	   
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			window.location.hash = hash;
+		  });
+		} // End if
+	  });
+	});
+	
+	
+	</script>
+	
+	<script>
+	
+	$(function() {
+	  $("body").click(function(e) {
+		if (e.target.className == "option" || $(e.target).parents(".option").length) {
+			e.target.getElementsByClassName("radioBtn")[0].checked=true; 
+		} 
+	  });
+	})
+	</script>
+	
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col" id="side_bar">
+				<script>loadSideBar();</script>
+			</div>
+			<!-- page content area main -->
+			<div class="right_col" role="main">
+				<div id="page_title">
+					<script>loadTitle();</script>
+				</div>
+
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<div class="case1">
+									<div style="display: inline-block; text-align: left; margin-top: 1em;" id="table_of_contents">
+										<h1>Table of Contents</h1>
+										<p> 
+											1.	Objectives <br>
+											2.	Case Overview <br>
+											3.	Wound History <br>
+											4.	Physical Examination <br>
+											5.	Clinical Signs and Symptoms <br>
+											6.	Assessment Tool <br>
+											7.	Causative Organisms <br>
+											8.	Culture Techniques <br>
+											9.	Differential Diagnosis <br>
+											10.	Management and Prevention <br>
+											11.	Costs <br>
+											12.	Post-Quiz <br>
+										</p>
+									</div>
+									<a class="continue btnLink" href="#objectives">Start Module</a>
+								</div>	
+								
+								<div class="case1" id="objectives" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Objectives</h1>
+									<div style="display: inline-block; text-align: left;">
+
+										•	Understand common terms used to describe wound progression <br>
+										•	Recognize factors that contribute to wound infection<br>
+										•	Identify the risk factors that may predispose a patient to wound infection<br>  
+										•	Assess wounds for clinical signs and symptoms of infection<br> 
+										•	Use assessment tool to understand wound infection continuum <br> 
+										•	Review the differential diagnosis of wound infection<br> 
+										•	Describe different treatment and management options available for wound infection <br> 
+										•	Apply risk-minimizing strategies to prevent wound infections <br> 
+									</div>
+									<a class="objectives btnLink" href="#overview">Continue</a>
+								</div>	
+								
+								<div class="case1" id="overview">
+									<h1 style="padding-top: 0.5em;">Case Overview</h1>
+									<div style="display: inline-block; text-align: left; margin-top:1.5em; width:75%;">
+										Ms. Daphne Basset is a 67-year-old lady who has been discharged from the hospital after treatment for pneumonia one week ago.
+									</div>
+									<br>
+									<br>
+									<button type="button" class="collapsible">Past Medical History</button>
+									<div class="content">
+										• Cerebral vascular accident (CVA)<br>
+										• Type 2 diabetes mellitus <br>
+										• Chronic right medial malleolus leg ulcer 
+					
+									</div>
+									
+									<button type="button" class="collapsible">Medications</button>
+									<div class="content">
+										• Metformin 500 mg BID <br>
+										• Aspirin 100 mg daily <br>
+										• Captopril 12.5 mg BID <br>
+										• Acetaminophen 1 g QID <br>
+									</div>
+									
+									<button type="button" class="collapsible">Social History</button>
+									<div class="content">
+										• Lost 15 lbs over 1.5 years through diet modification recommended by her dietician  <br>
+										• Mobilizes with a four-pronged stick due to minimal loss of sensation and motor function in her left leg after CVA  <br>
+										• Lives alone in an apartment building  <br>
+										• Has been smoking 1/2 pack cigarettes daily since 15 years <br>
+									</div>
+									<a class="overview btnLink" href="#wound">Continue</a>
+									<script>
+									collapseTabs("collapsible", "overview"); 
+									</script>								
+								</div>
+								
+								<div class="case1" id="wound" style="background-color: #9cc5ff; color: #595959;">
+									<h1 style="padding-top: 0.5em;">Wound History</h1>
+									<div style="display: inline-block; text-align: left; margin-top:1.5em; width:75%;">
+										Ms. Basset has had a chronic right medial malleolus leg ulcer for six months, which initially developed post-trauma. She is currently concerned that her leg ulcer may be complicated by a wound infection. You are asked to assess her today.<br><br>					
+										Before we move forward, it is important to understand specific terms used to describe the progression of wounds. Click on the following terms to see their definitions:
+									</div>
+									<br><br>
+									<script>
+										addWords('wound'); 
+									</script>
+									<br>
+									<div style="display: inline-block; text-align: left; margin-top:1.5em; width:75%;">
+										<hr class="blueBackground-border">
+										<p><b>Question 1: What is a wound infection? Type your answer in the text box.</b></p>
+										<textarea id="Q1" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q1Explanation')">Submit</button>
+										<div id="Q1Explanation" class="explanation" style="display:none;">
+											<u>Explanation</u><br>
+											Wounds are contaminated when bacteria enter the wound through:  
+											<ol>
+												<li>Direct contact (e.g. hands of the carer while changing dressings)</li> 
+												<li>Environment (e.g. micro-organisms deposited from the surrounding air)</li>
+												<li>Self-contamination (e.g. patient’s own skin)</li>
+											</ol>
+										</div>
+										<hr class="blueBackground-border">
+										<br>
+										Wound infection involves complex interactions between bacteria, host, and the surrounding environment (see <b>Figure 1</b> below). All wounds are contaminated. When the host can no longer defend against the invading microorganisms, infection occurs. Basically, the wound may progress from a contamination to colonization to critical colonization to infection as the bacterial load increases. A state of wound infection slows the healing process and places the patient at a risk of poor wound outcomes. 
+										<br><br>
+									</div>
+									<img src="Figure1-case1.jpg" class="center" width="75%" height="90%">																	
+									<br><br>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<hr class="blueBackground-border">
+										<p><b>Question 2: What further questions about the wound do you wish to ask the patient? Type your answer in the text box. </b></p>
+										<textarea id="Q2" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<hr class="blueBackground-border">
+										<br>
+										You begin to ask the following questions. Click on each question to find out Ms. Basset’s replies
+									</div>		
+									<br><br>
+									<button type="button" class="collapsible secondcollapse">How are you feeling, Ms. Basset?</button>
+									<div class="content">
+										Overall, I am feeling well. I am taking Tylenol 1g every six hours. My appetite is good and it’s just the pain that is bothersome. I usually check my temperature and it has been below 38 degrees celsius. 
+									</div>
+									<button type="button" class="collapsible secondcollapse">How’s the pain?</button>
+									<div class="content">
+										Leg ulcer pain has increased since compression therapy was stopped one week ago by Amy, my wound care nurse. She thought that I would be more comfortable without it. 								
+									</div>
+									<button type="button" class="collapsible secondcollapse">Is the wound pain today different from her usual wound pain?</button>
+									<div class="content">
+										No, it’s the same. 
+									</div>
+									<button type="button" class="collapsible secondcollapse">What usually resolves the wound pain?</button>
+									<div class="content">
+										It gets better when my leg is elevated. 								
+									</div>
+									<button type="button" class="collapsible secondcollapse">Who is taking care of your wounds? What type of wound dressing regimen has been used?</button>
+									<div class="content">
+										A wound care nurse, Amy, comes to my place twice a week. She changes my dressings. 								
+									</div>
+									
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<br><br>
+										Here are the patient's records:
+										<br><br>
+										<div style="overflow-x:auto;">
+											<table style="display: inline-block; text-align: left;margin-left: auto; margin-right: auto;background-color: white;">
+												<tr>
+													<th>Haemoglobin</th>
+													<th>Serum Albumin</th>
+													<th>Blood Glucose Levels during the Past Week</th>
+													<th>Ankle Brachial Pressure Index</th>
+												</tr>
+												<tr>
+													<td>10.1 mmol/L</td>
+													<td>32 mmol/L</td>
+													<td>Within normal limits</td>
+													<td>0.8</td>													
+												</tr>
+												
+											</table>
+										</div>
+										
+										<br><hr class="blueBackground-border">
+										<p><b>Question 3: With the known information, what factors do you think may be causing an increase in wound pain? Type your answer in the text box.</b></p>
+										<textarea id="Q3" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q3Explanation')">Submit</button>
+										<div id="Q3Explanation" class="explanation" style="display:none;">
+											<u>Explanation</u><br>
+											Potentially edema and lack of compression stockings. Physical examination and doppler studies are required to investigate further. 
+										</div>
+									</div>
+									<a class="wound btnLink" href="#examination">Continue</a>
+									<script>
+									collapseTabs("collapsible secondcollapse", "wound");
+									</script>
+								</div>
+								
+								<div class="case1" id="examination">
+									<h1 style="padding-top: 0.5em;">Physical Examination</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<p><u>General:</u><br>
+										On examination she appears anxious, short of breath and is complaining about pain in her leg ulcer (6/10 visual analogue scale). </p>
+									</div>
+									<img src="Basset1.jpg" class="center" width="75%" height="90%">	
+									<br><br>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<p><u>Wound:</u></p>
+										<ul>
+											<li>Malodour</li>
+											<li>An increase in purulent exudate</li>
+											<li>Some friable granulation tissue present</li>
+											<li>No change in wound dimensions</li>
+											<li>An increase in slough (was 30 % and is now 70 %) and a minimal increase in peri-wound erythema noted during the past week</li>
+											<li>No compression currently being worn</li>
+										</ul>
+										
+									</div>
+									
+									<a class="examination btnLink" href="#clinical">Continue</a>
+								</div>
+								
+								<div class="case1" id="clinical" style="background-color: #9cc5ff; color: #595959; overflow:hidden;">
+									<h1 style="padding-top: 0.5em;">Clinical Symptoms and Signs </h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<p><b>Question 4: What are the clinical signs and symptoms of infections? Type your answer in the text box. </b></p>
+										<textarea id="Q4" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q4Explanation')">Submit</button>
+										<div id="Q4Explanation" class="explanation" style="display:none;">
+											<img src="Figure3-case1.jpg" style="margin-bottom:1.5em" width="100%" height="90%" class="center">	
+											<img src="Figure4-case1.jpg" width="100%" height="90%" class="center">	
+										</div>
+									</div>
+									
+									<br>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<hr class="blueBackground-border">
+										<p><b>Question 5: What are the signs specific to wound healing by secondary intention? Type your answer in the text box.</b></p>
+										<textarea id="Q5" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q5Explanation')">Submit</button>
+										<div id="Q5Explanation" class="explanation" style="display:none;">
+											<img src="Figure5-case1.jpg" style="margin-bottom:1.5em" width="100%" height="90%" class="center">	
+
+										</div>
+										
+									</div>
+									
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<hr class="blueBackground-border">
+										Please note that wounds of varying etiologies may present with different clinical signs and symptoms (see <b>Table 1</b> below). <br><br>
+										<img src="Table1-case1.jpg" style="margin-bottom:1.5em" width="100%" height="75%" class="center">	
+										<hr class="blueBackground-border">
+										As a result of comorbidities, some signs of infection may be masked. For example, erythema may be masked in venous leg ulcers due to lipodermatosclerosis and hemosiderin staining. Blue or purple discolouration in arterial leg ulcers may occur due to reduced blood flow and increased metabolic needs. Moreover, patients with diabetes often do not present with standard inflammatory signs of infection, making diabetic foot ulcers a major concern. Lastly, immunosuppressive drugs may also mask signs of infection.
+										<br><hr class="blueBackground-border">
+										<p><b>Question 6: What factors increase risk of infection? Type your answer in the text box. </b></p>
+										<textarea id="Q6" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q6Explanation')">Submit</button>
+										<div id="Q6Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											Host resistance is a key factor in determining whether or not an infection will occur. Insufficient blood supply leads to bacterial proliferation and a greater bacterial bioburden, thus increasing the risk of infection. Tissue perfusion may be affected by uncontrolled diabetes or arterial/venous insufficiency. Local factors may also increase infection risks. These include large wound size, anatomic location and presence of foreign bodies (see <b>Figure 6</b> below).<br><br>
+											<img src="Figure6-case1.jpg" style="margin-bottom:1.5em" width="100%" height="90%" class="center">	
+										</div>
+										<hr class="blueBackground-border">
+										<p><b>Question 7: Are there any other factors in the case provided that may increase the risk of infection in Ms. Basset’s wound? Type your answer in the text box.</b></p>
+										<textarea id="Q7" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q7Explanation')">Submit</button>
+										<div id="Q7Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											<ol>
+												<li>Nonadherence to compression therapy</li>
+												<li>Smoking</li>
+												<li>Lack of exercise</li>
+												<li>Diabetes Mellitus</li>
+
+											</ol>
+										</div>
+									</div>
+									<a class="clinical btnLink" href="#assessment">Continue</a>
+								</div>
+								
+								<div class="case1" id="assessment">
+									<h1 style="padding-top: 0.5em;">Assessment Tool</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										The wound infection continuum is an assessment tool used to describe the clinical states and microbial growth in the wound, assisting in clinical decision making (see <b>Figure 7</b> below). <br>
+										<br>
+										<img src="Figure7-case1.jpg" width="100%" height="90%" class="center">
+										<hr class="whiteBackgroundBorder">
+										<p><b>Question 8: What stage of the wound continuum do you think Ms. Basset is at? Type your answer in the text box.</b></p>
+										<textarea id="Q8" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q8Explanation')">Submit</button>
+										<div id="Q8Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											Stage 2, progressing towards Stage 3
+										</div>
+									</div>								
+									<a class="assessment btnLink" href="#causative">Continue</a>
+								</div>
+								
+								<div class="case1" id="causative" style="background-color: #9cc5ff; color: #595959; overflow:hidden;">
+									<h1 style="padding-top: 0.5em;">Causative Organisms</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<p><b>Question 9: What are the most common causative organisms associated with wound infections? Type your answer in the text box.</b></p>
+										<textarea id="Q9" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q9Explanation')">Submit</button>									
+									</div>
+
+									<div id="Q9Explanation" class="explanation" style="display:none; margin-left: auto; margin-right: auto; width: 75%">
+										<div style="overflow-x:auto;">
+											<table style="display: inline-block; text-align: left;margin-left: auto; margin-right: auto;background-color: white;">
+												<tr>
+													<th>Type of Pathogen</th>
+													<th>Causative Organism</th>
+												</tr>
+												<tr>
+													<td>Gram Negative Aerobic Rods</td>
+													<td>
+														<ul>
+															<li><i>Pseudomonas aeruginosa</i></li>
+														</ul>
+													</td>
+													
+												</tr>
+												<tr>
+													<td>Gram Negative Facultative Rods</td>
+													<td>
+														<ul>
+															<li><i>Escherichia coli</i></li>
+															<li><i>Enterobacter</i> species</li>
+															<li><i>Klemsiella</i> species</li>
+															<li><i>Prosteus</i> species</li>
+														</ul>
+													</td>
+													
+												</tr>
+												<tr>
+													<td>Gram Positive Cocci</td>
+													<td>
+														<ul>
+															<li>Beta hemolytic <i>Streptococci</i></li>
+															<li><i>Enterococci</i></li>
+															<li><i>Staphylococcus aureus/MRSA</i></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>Anaerobes</td>
+													<td>
+														<ul>
+															<li>Bacteroides</li>
+															<li><i>Clostridium</i></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td>Fungi</td>
+													<td>
+														<ul>
+															<li>Yeasts</li>
+															<li><i>Aspergillus</i></li>
+														</ul>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<a class="causative btnLink" href="#culture">Continue</a>
+								</div>
+								
+								<div class="case1" id="culture">
+									<h1 style="padding-top: 0.5em;">Culture Techniques</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										Wounds that should be sampled include a) clinically diagnosed, b) suspected of infection, or c) deteriorating with no signs of infection. Antimicrobial sensitivities can be determined using bacterial culture for the selection of antibiotics and identification of resistant organisms (e.g. MRSA). 									
+										<br><hr class="whiteBackgroundBorder">
+										<p><b>Question 10: What options are available for performing culturing wounds? Type your answer in the text box. </b></p>
+										<textarea id="Q10" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q10Explanation')">Submit</button>
+										<div id="Q10Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											<ol>
+												<li>Tissue biopsies, considered to be gold standard for wound culture, identify causative microorganisms. However, they interfere with wound bed healing</li>
+												<li>Swab cultures are less invasive, however, they are unreliable</li>
+												<li>The quantitative swab (Levine) technique is the most useful for obtaining swab cultures, as it provides information on the numbers and types of microorganisms (<b>see steps of performing a swab culture below</b>)</li>
+											</ol>
+										</div>
+										<br><hr class="whiteBackgroundBorder">
+										During infection, quantitative tissue biopsy or qualitative swab techniques should be performed through the following steps:
+										<ol>
+											<li>To ensure organisms are not killed, the wound must be first cleaned with saline</li>
+											<li>The swab should avoid exudate and debris, and be taken from granulation tissue</li>
+											<li>A rayon or alginate-tipped applicator moistened with saline should be twirled over a 1 cm2 area using pressure</li>
+											<li>For larger wounds (>5 cm<sup>2</sup>), a zig-zag pattern is useful</li>
+											<li>The swab is then placed into four quadrants on a standard media</li>
+											<li>The more quadrants showing growth, the more bacteria on the swab</li>
+											<li>Specimen must be properly labelled with the name, date, and site of removal. Information such as the type and position of the wound, and signs of infection are also useful to include</li>
+										</ol>
+										<u>Note: The health and symptoms of the patient should be considered in conjunction with laboratory results. Also, blood cultures are recommended for patients showing signs of sepsis.</u>
+									</div>								
+									<a class="culture btnLink" href="#differential">Continue</a>
+								</div>
+								
+								<div class="case1" id="differential" style="background-color: #9cc5ff; color: #595959; overflow:hidden;">
+									<h1 style="padding-top: 0.5em;">Differential Diagnosis</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										Non-infectious inflammatory conditions may complicate the diagnosis of a wound infection. The most common of these conditions are:									
+									</div>
+									<script>
+										addWords('differential');
+										collapseTabs('collapsible secondcollapse', 'differential'); 
+									</script>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										<br><hr class="blueBackground-border">
+										<p><b>Question 11: What do you think is the etiology of Ms Basset’s wound? Type your answer in the text box.</b></p>
+										<textarea id="Q11" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q11Explanation')">Submit</button>
+										<div id="Q11Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											The major etiology of Ms. Basset’s wound, as determined by review of her medical history, physical examination and Doppler studies, is  venous hypertension with an element of arterial insufficiency (ankle brachial pressure index of 0.8). 
+										</div>
+									</div>
+									<a class="differential btnLink" href="#management">Continue</a>
+								</div>
+								
+								<div class="case1" id="management">
+									<h1 style="padding-top: 0.5em;">Management and Prevention</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										Once a wound infection has been clinically diagnosed, it is usually managed with a combination of local wound therapy, appropriate systemic antibiotics and/or topical antimicrobials (see <b>Figure 8 and Tables 3-4</b>).
+										<br><br>
+										<img src="Figure8-case1.jpg" width="100%" height="90%" class="center">
+										<br><br>
+										<img src="Table3-case1.jpg" width="100%" height="90%" class="center">
+										<br><br>
+										<img src="Table4-case1.jpg" width="100%" height="90%" class="center">
+										<br><hr class="whiteBackgroundBorder">
+										<p><b>Question 12: What would you recommend for the management of Ms. Basset’s wound infection? Type your answer in the text box. </b></p>
+										<textarea id="Q12" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q12Explanation')">Submit</button>
+										<div id="Q12Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											<ol>
+												<li>Consider light compression stockings for edema control</li>
+												<li>Encourage exercises such as ankle flexion–extension to optimize venous return</li>
+												<li>Take a wound swab for specificity and culture</li>
+												<li>Begin antibiotics targeting the causative organisms</li>
+												<li>Review and evaluate the need for analgesia </li>
+												<li>Cleanse the wound and debride weakened tissue</li>
+												<li>Consider starting topical antimicrobial dressing. If this is not possible, cleanse and dress wounds more frequently and closely monitor wound status.</li>
+												<li>Minimize cross-infection</li>
+												<li>Implement appropriate exudate management dressings and peri-wound skin protection</li>
+												<li>Consult a dietitian for weight loss and wound healing supplement </li>
+												<li>Monitor and optimize glycaemic control</li>
+												<li>Educate Ms. Basset on the need for judicious compression therapy</li>
+												<li>Construct a plan highlighting the expected healing progress to ensure early detection of changes or delays in the wound.</li>
+												<li>Communicate the management plan with Ms. Basset, wound care nurse and other physicians </li>
+											</ol> 
+										</div>
+										
+										<br><hr class="whiteBackgroundBorder">
+										<p><b>Question 13: What would you recommend to Ms. Basset in order to prevent further wound infections.  Type your answer in the text box. </b></p>
+										<textarea id="Q13" style="width: 100%;" rows="4" placeholder="Enter your answer here">
+										</textarea>
+										<button class="submitBtn" onclick="showExplanation('Q13Explanation')">Submit</button>
+										<div id="Q13Explanation" class="explanation" style="display:none;">
+											<u>Explanation:</u><br>
+											<ol>
+												<li>Ensure a balance of sleep and exercise </li>
+												<li>Smoking cessation strategies </li>
+												<li>Limit alcohol intake </li>
+												<li>Optimize adequate nutritional intake and consider dietician review to discussion nutritional supplementation </li>
+												<li>Seek psychosocial support </li>
+											</ol> 
+										</div>
+									</div>
+									<a class="management btnLink" href="#costs">Continue</a>
+
+								</div>
+								
+								<div class="case1" id="costs" style="background-color: #9cc5ff; color: #595959; overflow:hidden;">
+									<h1 style="padding-top: 0.5em;">Costs</h1>
+									<div style="display: inline-block; text-align: left; width:75%;">
+										What impacts do the wounds have on patients and the healthcare system?<br><br>
+										
+									</div>
+									<button type="button" class="collapsible secondcollapse">Direct cost to healthcare</button>
+										<div class="content">
+											<ul>
+												<li>Diagnostic Costs</li>
+												<li>Extended inpatient length of stay</li>
+												<li>Treatments</li>
+												<li>Dressing Equipment</li>
+												<li>Wound care nurse costs </li>
+											</ul>
+										</div>
+										<button type="button" class="collapsible secondcollapse">Direct cost to patients</button>
+										<div class="content">
+											Treatments and dressings not covered by insurance or OHIP 										
+										</div>
+										<button type="button" class="collapsible secondcollapse">Indirect cost to patients</button>
+										<div class="content">
+											<ul>
+												<li>Lost days from work</li>
+												<li>Transportation costs</li>
+											</ul> 
+										</div>
+										<button type="button" class="collapsible secondcollapse">Psychosocial impacts</button>
+										<div class="content">
+											<ul>
+												<li>Disturbing Sleep</li>
+												<li>Impairing mobility</li>
+												<li>Poor quality of life</li>
+											</ul> 								
+										</div>
+										<script>
+										collapseTabs('collapsible secondcollapse', 'costs'); 
+										</script>
+									<a class="costs btnLink" href="#quiz">Continue</a>
+
+								</div>
+								
+								<div class="case1" id="quiz" >
+									<h1 style="padding-top: 0.5em;">Post-Quiz</h1>
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em;">
+											<div style = "text-align:left">
+												1.	What is the most important determinant of whether a wound will become infected?											
+											</div>
+											<div id="firstQnAns" class="options">
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="Wound size">Wound size<br>
+												</div>
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="Presence of foreign bodies">Presence of foreign bodies<br>
+												</div>
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="Anatomical location">Anatomical location<br>
+												</div>
+												
+												<div class="option">
+													<input class="radioBtn" type="radio" name="rate" value="Host resistance">Host resistance<br>
+												</div>
+												
+											</div>
+											<div id="firstQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('firstQnAns', '1', 'firstQnFeedback')">Submit</button>
+										</div>
+										
+									</div>
+									<br><br>
+									
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em; ">
+												<div style = "text-align:left">
+													2.	Wound deterioration is a sign of which stage of infection?												
+												</div>
+												<div id="secondQnAns" class="options">
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Stage 1">Stage 1<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Stage 2">Stage 2<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Stage 3">Stage 3<br>
+													</div>
+													
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Stage 4">Stage 4<br>
+													</div>
+												</div>
+											<div id="secondQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('secondQnAns', '2', 'secondQnFeedback')">Submit</button>
+										</div>
+									</div>
+									<br><br>
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em; ">
+												<div style = "text-align:left">
+													3.	What is considered the gold standard for wound culture? 												
+												</div>
+												<div id="thirdQnAns" class="options">
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Quantitative swab culture">Quantitative swab culture<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Tissue biopsy">Tissue biopsy<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Levine technique">Levine technique<br>
+													</div>
+													
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Semi-quantitative swab culture">Semi-quantitative swab culture<br>
+													</div>
+												</div>
+											<div id="thirdQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('thirdQnAns', '3', 'thirdQnFeedback')">Submit</button>
+										</div>
+									</div>
+									<br><br>
+									
+									<div style="display: inline-block; width: 75%;">
+										<div style="background-color: #ffd69c; padding: 1em; ">
+												<div style = "text-align:left">
+													4.	Which of the following is least likely to be one of the discussed differential diagnoses for wound infection?
+												</div>
+												<div id="fourthQnAns" class="options">
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Allergic contact dermatitis">Allergic contact dermatitis<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Pyoderma gangrenosum">Pyoderma gangrenosum<br>
+													</div>
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Melanoma">Melanoma<br>
+													</div>
+													
+													<div class="option">
+														<input class="radioBtn" type="radio" name="rate" value="Erythematous maceration">Erythematous maceration<br>
+													</div>
+												</div>
+											<div id="fourthQnFeedback">
+											
+											</div>
+											<button class="quizSubmit" onclick="checkAns('fourthQnAns', '4', 'fourthQnFeedback')">Submit</button>
+										</div>
+									</div>
+								</div>
+
+								<!--
+								<button onclick="btnfn('case1(1).html')">Access Module</button>-->
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+						
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /page content -->
+
+			<!-- footer content -->
+			<footer>
+				<div class="pull-right">
+					Library Management System
+				</div>
+				<div class="clearfix"></div>
+			</footer>
+			<!-- /footer content -->
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="../js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- FastClick -->
+	<script src="../js/fastclick.js"></script>
+	<!-- NProgress -->
+	<script src="../js/nprogress.js"></script>
+	<!-- Custom Theme Scripts -->
+	<script src="../js/custom.min.js"></script>
+</body>
+</html>
