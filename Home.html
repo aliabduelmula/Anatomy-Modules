@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Home Page </title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/nprogress.css" rel="stylesheet">
+		<link href="css/custom.min.css" rel="stylesheet">
+	</head>
+
+	<body class="nav-md">
+		<div class="container body">
+			<div class="main_container">
+				<div class="col-md-3 left_col">
+					<div class="left_col scroll-view">
+						<div class="navbar nav_title" style="border: 0;">
+							<a href="#" class="site_title"><i class="fa fa-book"></i><span>Dermatology CBL</span></a>
+						</div>
+						
+						<!-- sidebar menu -->
+						<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+							<div class="menu_section">
+								<h3>General</h3>
+								<ul class="nav side-menu">
+									<li>
+										<a href ="Home.html"> Home </a> 
+										<a href ="./Case1_Files/case1.html"> Case 1 </a><br> 
+										<a href ="./Case2_Files/case2.html"> Case 2 </a><br> 
+										<a href ="#"> Case 3 </a><br> 
+										<a href ="#"> Case 4 </a><br> 
+										<a href ="#"> Case 5 </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- page content area main -->
+				<div class="right_col" role="main">
+					<div class="page-title">
+						<div class="title_left">
+							<h3> Home </h3>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="x_panel">
+								<div class="x_title">
+									<h1>Welcome to Dr. Mufti's (AKA the boss) Wound Care Modules</h1>
+										<button onclick="btnfn()">Begin Case 1</button>
+										<script>
+											function btnfn() 
+											{ 
+												window.open('Case1_Files/case1.html',"_self");
+											}
+										
+										</script>
+
+										<button onclick="btn2()">Begin Case 2</button>
+										<script>
+											function btn2() 
+											{ 
+												window.open('case2.html',"_self");
+											}
+
+										</script>								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- /page content -->
+
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						Library Management System
+					</div>
+					<div class="clearfix"></div>
+				</footer>
+				<!-- /foote	r content -->
+			</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- FastClick -->
+		<script src="js/fastclick.js"></script>
+		<!-- NProgress -->
+		<script src="js/nprogress.js"></script>
+
+		<!-- Custom Theme Scripts -->
+		<script src="js/custom.min.js"></script>
+	</body>
+</html>
